@@ -5,7 +5,7 @@ from routers import articles, members, categories
 
 Base.metadata.create_all(bind=engine)
 
-app = FastAPI(title="Hasegawa Lab API")
+app = FastAPI(title="Hasegawa Lab API", redirect_slashes=False)
 
 app.add_middleware(
     CORSMiddleware,

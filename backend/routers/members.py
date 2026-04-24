@@ -7,7 +7,7 @@ from schemas import MemberOut
 router = APIRouter(prefix="/api/members", tags=["members"])
 
 
-@router.get("/", response_model=list[MemberOut])
+@router.get("", response_model=list[MemberOut])
 def list_members(db: Session = Depends(get_db)):
     return db.query(Member).order_by(Member.id).all()
 

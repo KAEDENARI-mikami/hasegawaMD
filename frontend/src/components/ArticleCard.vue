@@ -11,7 +11,7 @@ defineProps({
       <div class="card-image-placeholder" />
     </div>
     <div class="card-body">
-      <span class="label card-category">{{ article.category ?? 'CATEGORY' }}</span>
+      <span class="label card-category">{{ article.category?.name ?? 'CATEGORY' }}</span>
       <h3 class="card-title">{{ article.title ?? 'タイトルがここに入ります' }}</h3>
       <p class="card-summary">{{ article.summary ?? '概要文がここに入ります。ゼミメンバーが後から追記します。' }}</p>
       <span class="card-date label">{{ article.published_at ?? '----/--/--' }}</span>

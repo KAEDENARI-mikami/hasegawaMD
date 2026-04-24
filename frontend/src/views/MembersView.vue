@@ -1,5 +1,5 @@
 <script setup>
-import { ref, onMounted } from 'vue'
+import { ref, computed, onMounted } from 'vue'
 import MemberCard from '../components/MemberCard.vue'
 
 const members = ref([])
@@ -17,8 +17,8 @@ onMounted(async () => {
   }
 })
 
-const professor = () => members.value.filter(m => m.role === 'PROFESSOR')
-const students = () => members.value.filter(m => m.role !== 'PROFESSOR')
+const professor = computed(() => members.value.filter(m => m.role === 'PROFESSOR'))
+const students = computed(() => members.value.filter(m => m.role !== 'PROFESSOR'))
 </script>
 
 <template>
@@ -33,14 +33,14 @@ const students = () => members.value.filter(m => m.role !== 'PROFESSOR')
     <section class="section">
       <div class="container">
         <p class="section-title">Faculty</p>
-        <MemberCard v-for="m in professor()" :key="m.id" :member="m" />
+        <MemberCard v-for="m in professor" :key="m.id" :member="m" />
       </div>
     </section>
 
     <section class="section section--gray">
       <div class="container">
         <p class="section-title">Students</p>
-        <MemberCard v-for="m in students()" :key="m.id" :member="m" />
+        <MemberCard v-for="m in students" :key="m.id" :member="m" />
       </div>
     </section>
   </div>

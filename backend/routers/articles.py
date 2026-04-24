@@ -7,7 +7,7 @@ from schemas import ArticleOut
 router = APIRouter(prefix="/api/articles", tags=["articles"])
 
 
-@router.get("/", response_model=list[ArticleOut])
+@router.get("", response_model=list[ArticleOut])
 def list_articles(
     category: str | None = Query(None),
     limit: int = Query(20, le=100),
