@@ -1,0 +1,10 @@
+/* base.css — プロジェクト変数定義のみ */
+:root {
+  --color-black: #000;
+  --color-white: #fff;
+  --color-body: #1a1a1a;
+  --color-meta: #757575;
+  --color-light: #999;
+  --color-border: #e5e5e5;
+  --color-header-bg: #000;
+}
